@@ -25,11 +25,7 @@ def get_updates(offset = None):
 def last_update_id(res):
     return res['result'][-1]['update_id']
 
-def is_starter(msg):
-    starter = ["hey", "hello", "start", "strt", "begin", "init"]
-    for s in starter:
-        if s in msg: return True
-    else: return False
+
     
 def get_photo_chats(updates): # get image 
     photo_chats = []
@@ -52,7 +48,7 @@ def run():
         try:
             updates = get_updates(offset)
             offset = last_update_id(updates)+1
-            start_chats = get_start_chats(updates)
+            
             
             #photo_chats = get_photo_chats(updates)
             
